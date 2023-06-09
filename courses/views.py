@@ -52,7 +52,7 @@ class CourseListView(TemplateResponseMixin, View):
         else:
             courses = cache.get('all_courses')
             if not courses:
-                courses = all_courses.filetr(subject=subject)
+                courses = all_courses.filter(subject=subject)
                 cache.set('all_courses', courses)
         return self.render_to_response({'subjects': subjects,'subject':subject,'courses':courses})
 
