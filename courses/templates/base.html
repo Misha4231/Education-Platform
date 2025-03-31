@@ -11,14 +11,25 @@
 <body>
     <div id="header">
         <a href="/" class="logo">Educa</a>
-        <ul class="menu">
+        <ul class="menu" style="display: flex;gap: 10px;">
             {% if request.user.is_authenticated %}
+                {% if request.user.is_staff %}
+                <li>
+                    <a href="{% url 'manage_course_list' %}">My courses</a>
+                </li>
+                <li>
+                    <a href="{% url 'course_create' %}">Create course</a>
+                </li>
+                {% endif %}
                 <li>
                     <a href="{% url 'logout' %}">Sign out</a>
                 </li>
             {% else %}
                 <li>
                     <a href="{% url 'login' %}">Sign in</a>
+                </li>
+                <li>
+                    <a href="{% url 'student_registration' %}">Sign up</a>
                 </li>
             {% endif %}
         </ul>
