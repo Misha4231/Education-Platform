@@ -59,7 +59,7 @@ python manage.py runserver
 
 ### ➤ **Adding Content to Modules**  
 Each module can contain **four types of content**:  
-✔️ **Text** – Lessons in text format
+✔️ **Text** – Lessons in text format  
 ✔️ **Video** – Embedded videos  
 ✔️ **Image** – Add images to enhance lessons  
 ✔️ **Files** – Upload files
